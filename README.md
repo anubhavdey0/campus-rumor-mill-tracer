@@ -4,6 +4,8 @@ A simulation of how a rumor travels through a campus social graph. Breadth-first
 
 Nothing here is real data. The students, friendships, and rumors are generated from a seed.
 
+**Try it live:** [anubhavdey0.github.io/campus-rumor-mill-tracer](https://anubhavdey0.github.io/campus-rumor-mill-tracer/)
+
 ![A whisper-chain run with one student's version traced back to the source](docs/screenshot.png)
 
 ## What it shows
