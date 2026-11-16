@@ -1,0 +1,9 @@
+node_modules
+dist
+*.log
+.DS_Store
+.vite
+.playwright-cli
+test-results
+playwright-report
+blob-report

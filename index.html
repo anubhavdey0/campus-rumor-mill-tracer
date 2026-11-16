@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simulation of how a rumor spreads across a campus social graph. Breadth-first, depth-first, and best-first search, visualized as gossip that loses credibility and bends at every hop."
+    />
+    <meta name="theme-color" content="#f3f4f7" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>Campus Rumor Mill Tracer</title>
+
+    <!-- Link previews in chats and social posts. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Campus Rumor Mill Tracer" />
+    <meta property="og:title" content="Campus Rumor Mill Tracer" />
+    <meta
+      property="og:description"
+      content="Start a rumor on a simulated campus, choose how it travels, and watch it lose credibility and bend at every hop."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Campus Rumor Mill Tracer" />
+    <meta
+      name="twitter:description"
+      content="Breadth-first, depth-first, and best-first search, visualized as gossip on a simulated campus."
+    />
+    <!-- social-image -->
+
+    <script>
+      // Set the theme before first paint so the page never flashes the wrong mode.
+      // The colors match --bg in src/index.css.
+      (function () {
+        var theme = 'light';
+        try {
+          var saved = localStorage.getItem('rumor-mill-theme');
+          if (saved === 'dark' || saved === 'light') theme = saved;
+          else if (window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
+        } catch (error) {}
+        document.documentElement.dataset.theme = theme;
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta && theme === 'dark') meta.setAttribute('content', '#0e1016');
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <p style="max-width: 40rem; margin: 3rem auto; padding: 0 1rem; font: 16px/1.6 system-ui, sans-serif">
+        Campus Rumor Mill Tracer is an interactive simulation and needs JavaScript to run. Turn JavaScript on and reload
+        the page.
+      </p>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
